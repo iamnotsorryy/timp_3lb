@@ -5,7 +5,7 @@ modAlphaCipher::modAlphaCipher(const std::string& skey)
         alphaNum[ws[i]]=i;  //map
     }
     key = convert(getValidKey(skey)); 
-    int n = 0;
+    int n = 0; //заплатка их методички
     for (auto e:key) {
         if (e==0)
             n++;
