@@ -2,9 +2,9 @@
 modAlphaCipher::modAlphaCipher(const std::string& skey)
 {
     for (unsigned i=0; i<ws.size(); i++) {
-        alphaNum[ws[i]]=i;
+        alphaNum[ws[i]]=i;  //map
     }
-    key = convert(getValidKey(skey));
+    key = convert(getValidKey(skey)); 
     int n = 0;
     for (auto e:key) {
         if (e==0)
@@ -15,7 +15,7 @@ modAlphaCipher::modAlphaCipher(const std::string& skey)
 
 }
 
-std::string modAlphaCipher::encrypt(const std::string& open_text)
+std::string modAlphaCipher::encrypt(const std::string& open_text) //зашифровка
 {
     std::vector<int> work = convert(getValidOpenText(open_text));
     for(unsigned i=0; i < work.size(); i++) {
@@ -33,12 +33,12 @@ std::string modAlphaCipher::decrypt(const std::string& cipher_text)
     return convert(work);
 }
 
-inline std::vector<int> modAlphaCipher::convert(const std::string& s)
+inline std::vector<int> modAlphaCipher::convert(const std::string& s) 
 {
     std::vector<int> result;
     wstring w_s = codec.from_bytes(s); // перекодируем
     for (unsigned i=0; i<w_s.size(); i++) {
-        result.push_back(alphaNum[w_s[i]]);
+        result.push_back(alphaNum[w_s[i]]); //мап в вектор
     }
     return result;
 }
