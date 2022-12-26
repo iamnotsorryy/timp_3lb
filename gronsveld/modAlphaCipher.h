@@ -24,7 +24,6 @@ private:
     std::string getValidCipherText(const std::string & s);
     std::string getValidKey(const std::string & s);
 public:
-    modAlphaCipher()=delete; //запретим конструктор без параметров
     modAlphaCipher(const std::string& skey); //конструктор для установки ключа
     std::string encrypt(const std::string& open_text); //зашифрование
     std::string decrypt(const std::string& cipher_text);//расшифрование
